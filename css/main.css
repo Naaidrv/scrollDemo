@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #d3eefe;
+  background-color: black;
 }
 
 h1 {
@@ -44,6 +44,7 @@ p {
   flex-direction: column;
   text-align: center;
   position: relative;
+  background-color: #d3eefe;
 }
 
 .first-section .images-wrapper {
@@ -142,6 +143,7 @@ p {
   align-items: center;
   flex-direction: column;
   text-align: center;
+  background-color: #d3eefe;
   position: relative;
 }
 
@@ -213,15 +215,12 @@ p {
     }
 }
 
-.galaxy{
-  height: 100%; 
-  width: 100%;
-  background-image: url('/img/galaxia.gif');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /*background-color: yellowgreen;*/
-}
+  #particles-js {
+    height: 100vh; 
+    width: 100%;
+      position: fixed;
+      z-index: -1;
+  }
 
 .grid { 
   display: grid;
@@ -238,7 +237,7 @@ p {
 .grid > article {
   width: 40vh;
   height: 38vh;
-  background-color: rgba(0, 0, 0, 0.589);
+  background-color: rgba(92, 8, 81, 0.589);
   border-radius: 10px;
   box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
 }
