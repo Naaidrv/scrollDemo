@@ -114,8 +114,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-window.addEventListener('load', () => {
-    const conload = document.querySelector('.conload')
-    conload.style.opacity = 0
-    conload.style.visibility = 'hidden'
+//Movement Animation to happen
+const card = document.querySelector(".card");
+const container = document.querySelector(".container");
+
+
+const title = document.querySelector('.title');
+const poke = document.querySelector('.poke img');
+const description = document.querySelector('.info h3');
+const extrat = document.querySelector('.extrat')
+const play = document.querySelector('.play');
+
+container.addEventListener("mousemove", (e) => {
+    let xAxis = (window.innerWidth / 2 - e.pageY) / 15;
+    let yAxis = (window.innerHeight / 2 - e.pageX) / 30;
+    card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+  });
+
+  container.addEventListener("mouseenter", (e) => {
+    card.style.transition = "none";
+
+    title.style.transform = "perspective(100px) translateZ(25px)";
+    poke.style.trnaform = "rotate(-45deg)";
+    description.style.transform = "perspective(100px) translateZ(25px)";
+    extrat.style.transform = "perspective(100px) translateZ(10px)";
+    play.style.transform = "perspective(100px) translateZ(15px)";
 });
+
+container.addEventListener("mouseleave", (e) => {
+    //card.style.transition = "all 0.75s ease";
+    card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+    title.style.transform = "translateZ(0px)";
+    poke.style.transform = "translateZ(0px) rotateZ(0deg)";
+    description.style.transform = "translateZ(0px)";
+    extrat.style.transform = "translateZ(0px)";
+    play.style.transform = "translateZ(0px)";
+  });
