@@ -112,4 +112,10 @@ document.addEventListener('DOMContentLoaded', () => {
     .setPin('.third-section')
     .addTo(controller);
 
-})
+});
+
+window.addEventListener('load', () => {
+    const conload = document.querySelector('.conload')
+    conload.style.opacity = 0
+    conload.style.visibility = 'hidden'
+});
