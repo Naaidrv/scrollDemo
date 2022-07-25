@@ -230,7 +230,7 @@ p {
  .galaxy {
     height: 100%; 
     width: 100%;
-    background-image: url('/img/nebulosas.gif');
+    background-image: url('img/nebulosas.gif');
     background-repeat: no-repeat;
     background-size: cover;
     /*background-color: yellowgreen;*/
