@@ -1,3 +1,8 @@
+var overlayloader = document.getElementById("loader");
+window.addEventListener("load", function(){
+    $("#loader").fadeOut();
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     let controller = new ScrollMagic.Controller();
 
@@ -126,16 +131,15 @@ const extrat = document.querySelector('.extrat')
 const play = document.querySelector('.play');
 
 container.addEventListener("mousemove", (e) => {
-    let xAxis = (window.innerWidth / 2 - e.pageY) / 15;
-    let yAxis = (window.innerHeight / 2 - e.pageX) / 30;
+    let xAxis = (window.innerWidth / 15 - e.pageX) / 55;
+    let yAxis = (window.innerHeight / 15 - e.pageY) / 5;
     card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
   });
 
   container.addEventListener("mouseenter", (e) => {
     card.style.transition = "none";
-
-    title.style.transform = "perspective(100px) translateZ(25px)";
-    poke.style.trnaform = "rotate(-45deg)";
+    title.style.transform = "perspective(100px) translateZ(26px)";
+    poke.style.transform = "rotate(-45deg)";
     description.style.transform = "perspective(100px) translateZ(25px)";
     extrat.style.transform = "perspective(100px) translateZ(10px)";
     play.style.transform = "perspective(100px) translateZ(15px)";
