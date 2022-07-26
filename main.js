@@ -77,27 +77,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let timeline3 = new TimelineMax();
     timeline3
-    .to('.section_3_01', 4, {
+    .to('.section_3_01', 2, {
         y: -250,
         ease: Power3.easeInOut
     })
-    .to('.section_3_02', 4, {
+    .to('.section_3_02', 2, {
         y: -200,
         ease: Power3.easeInOut
     }, '-=4')
-    .to('.section_3_03', 4, {
-        y: -100,
+    .to('.section_3_03', 2, {
+        y: 100,
         ease: Power3.easeInOut
     }, '-=4')
-    .to('.section_3_04', 4, {
+    .to('.section_3_04', 2, {
         y: 0,
         ease: Power3.easeInOut
     }, '-=4')
-    .to('.section_3_05', 4, {
-        y: 150,
+    .to('.section_3_05', 2, {
+        y: -150,
         ease: Power3.easeInOut
     }, '-=4')
-    .to('.section_3_06', 4, {
+    .to('.section_3_06', 2, {
         y: 250,
         ease: Power3.easeInOut
     }, '-=4')

@@ -363,13 +363,14 @@ button{
 
 .info h1{
   font-size: 3rem;
+  color: #FFF;
   transition: all 0.75s ease-out;
   }
 
 .info h3 {
   font-size: 1.3rem;
   padding: 2rem 0rem;
-  color: #585858;
+  color: #ffffff;
   font-weight: lighter;
 }
 
@@ -389,11 +390,11 @@ button{
   border-radius: 30px;
   cursor: pointer;
   font-weight: bold;
-  color: #585858;
+  color: #ffffff;
 }
 
 button.active{
-  background: #585858;
+  background: #176b8b;
   color: white;
 }
 
