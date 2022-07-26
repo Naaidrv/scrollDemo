@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/main.css" />
+    <script src="./js/three.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>
@@ -19,8 +20,59 @@
   <body>
     <div id="particles-js"></div>
     <div id="loader"></div>
-    <section class="one">
-    </section>
+      <script>
+var scene = new THREE.Scene();
+var camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+var renderer = new THREE.WebGLRenderer({ alpha: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.shadowMap.enabled = true;
+document.body.appendChild(renderer.domElement);
+
+// CUBE
+var geometry = new THREE.BoxGeometry(1, 1, 1);
+var material = new THREE.MeshStandardMaterial({ color: 0xA8A410 });
+var cube = new THREE.Mesh(geometry, material);
+cube.castShadow = true;
+cube.position.set(-2,-1,1);
+scene.add(cube);
+
+var geometryt = new THREE.BoxGeometry(2, 2, 2);
+var material = new THREE.MeshStandardMaterial({ color: 0xC06B16 });
+var cubet = new THREE.Mesh(geometryt, material);
+//cubet.castShadow = true;
+cubet.position.set(3,2,1);
+scene.add(cubet);
+
+// LIGHT
+var light = new THREE.DirectionalLight(0xffffff, 0.50, 1);
+light.position.set(1, 1, 1);
+light.castShadow = true;
+scene.add(light);
+
+// PLANE
+var planeGeometry = new THREE.PlaneGeometry(120, 20, 20, 20);
+var planeMaterial = new THREE.MeshStandardMaterial({ color: 0x33B4E0 });
+var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+plane.receiveShadow = true;
+scene.add(plane);
+
+camera.position.z = 5;
+camera.position.y = -3;
+camera.rotation.x = .5;
+
+
+function render() {
+    cube.rotation.x += 0.04
+    cube.rotation.y += 0.02
+
+    cubet.rotation.x += 0.02
+    cubet.rotation.y += 0.06
+    requestAnimationFrame(render);
+    renderer.render(scene, camera);
+}
+render();
+      </script>
     <!---<section class="first-section">
       <h1>Lorem ipsum dolor sit amet consectetur <br />Inventore magni cum possimus.</h1>
       <div class="images-wrapper">
